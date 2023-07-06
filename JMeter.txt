@@ -1,0 +1,77 @@
+What is JMeter:
+---------------
+
+Performance test application
+Build using Java
+Free & Open source
+Recording
+CLI-cmmd line
+Reports
+
+JMeter consists of:
+-------------------
+Menu Bar
+Tool bar
+Test plan area- all are tree view
+Editor section
+Time log and users
+
+In a menubar--->File
+New						---create new test plan
+Templates				---Auto selection
+Open					---Any saved test plans
+Open Recent 			---Open recent file
+Merge					---merge the test plan
+Save					---Save test plan
+
+How to create JMeter Test?
+--------------------------
+Step 1: Start JMeter
+Step 2: Create a TestPlan
+Step 3: Create a Thread Group(Users)
+Step 4: Add a sampler (HTTP)
+Step 5: Add Listeners
+Step 6: Run the test
+
+
+JMeter Listeners(Reporting):
+-----------------------------
+
+Used for reporting:
+
+listener = elements that gather information about the performance test
+used to view results/metrics of the test...
+
+View Results in table
+View Results Tree
+Aggregate Report
+Graph results
+Summary report
+Simple data writer
+
+Sample ---> Users
+
+Latency	 		= time to first byte(Start time of req)
+Sample Time		= the complete time
+
+Assertions:
+-----------
+
+Assertions = Checks on the Request and Response
+
+1.Response Assertion
+		(Most frequent Assertion of the response- we can verify response code, response message, text response, response headers)
+2.Duration Assertion
+		(We have to set the time limit not morethan exits(Thresold limit))
+		(Whenever the samplers should not take morethan the expected milliseconds limit)
+3.Size Assertion
+		(The assertion is based on size, we can control the response body size based upon condition)
+4.HTML Assertion
+		(However incase of the application is interact with 3rd party application We need to verify the (
+		warning and errors HTML or XML type of assertion)
+5.XML JSON Assertion
+		(Mostly for API and webservices assertion)
+6.XML Schema assertion
+		(To verify against with Schema of XML validation what we mentioned in the file)
+6.XPATH Assertion
+		(Based upon the xpath, we have to validate. The specfic element is present or not)
