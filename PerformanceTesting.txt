@@ -1,0 +1,193 @@
+Performance testing:
+--------------------
+
+
+
+Test Plan:
+----------
+	Chain or series of steps that jMeter is going to execute when the
+run button is pressed. 
+
+    A complete test plan will consist of
+---		one or more thread groups, 
+---		Logic controllers, 
+---		sample generating controllers,
+---		listeners,
+---		timers,
+---		assertion and
+---		configuration elements.
+
+*** A test plan must have atleast one test plan
+
+1.Adding Elements 
+2.Removing Elements 
+3.Saving the test plan 
+4.Running a test plan 
+5.Stopping a test(Stop[immediate(forceful) shutdown], Shutdown[graceful(It will shows the running in background) shutdown])
+6.Logging the info and errors 
+
+Important in Test Plan:
+-----------------------
+
+Test Group(Important for the TestPlan)
+Controllers(Logical controller and sampler present under in Thread group)
+Listeners
+Timers
+Assertion
+
+Thread Group:(Under Test plan all the actions done in thread group)
+-------------
+
+1.Beginning point of any test plan(e.g like main-method in java)
+2.The thread group element controls the number of threads jMeter will use to execute your test
+3.All the controllers and samplers must be under a thread group
+4.Other elements(e.g Listeners,May be placed directly under the test plan, so that it will applicable for all the thread group
+				under the test plan)
+
+Thread properties:
+-----------------
+Number of Threads(User)		: How many users access simultaneously
+Ramp-Up period(in seconds)	: User adding one by one
+Loop count					: How many it will run
+
+Number of Threads(User):
+	Set the number of threads(simulation of number of concurrent users)
+	
+Ramp-Up period:
+	(time taken to threads up and running=Ramp up period/Thread)
+	
+	If i give 10 threads and ramp up duration as 100/10 = 10 seconds. Which means for every 10 secondsone thread will start 
+	getting executed or the second thread will execute after 10 seconds of the first thread.
+
+Loop count:	
+Set the number of times to execute the test
+
+Controllers:
+------------
+Samplers---: 
+	1.It presents under the thread group
+	2.It indicated the JMeter to send request to a server and wait for a response
+	(e.g) I want to send the request with multiple user stay in website for a while in http request
+	
+	HTTP- http type request
+	FTP-  File transfer protocal(Any file transfer kind request)
+	JDBC- Java Database Connection(Data base kind request)
+
+Performance testing mainly focuses on three factors of a Software Program:
+---------------------------------------------------------------------------
+
+Speed - If the response of the application is fast or not 
+Scalability - The maximum user load is determined
+Stability - The application is checked under varying loads
+
+There are six types of performance testing, namely: 
+          -----------------------------------------              		  
+ 1. Load Testing
+    
+Load testing is a type in which it tests an application for its performance at normal and peak usage.
+The performance is checked as per the response time and consistency on different user loads.
+
+2. Volume Testing 
+
+Volume testing is a type where the system's performance is checked concerning the volume of data.
+To perform the test, it enters a vast amount of data into the database.
+
+3. Stress Testing 
+
+Stress testing is a type in which different ways to break the system are found, i.e., how much load a system can sustain.
+It checks how much load a system can hold in an incremental approach.
+
+4. Capacity Testing
+
+Capacity testing is a type in which it checks an application for its capability to meet business volumes.
+The testing is performed, keeping in mind the prospects of an application and the number of users.
+
+5. Reliability Testing 
+
+Reliability testing is when the application is verified if the application would become normal again after an abnormal state.
+It estimates the time that the system would take to return to its normal state.
+
+6. Scalability Testing
+
+Scalability testing is a type where the application is determined if it could scale up whenever needed.
+The need for scaling up comes when there is an increase in user load.
+
+Performance Testing Process
+The process of performance testing is divided into the following eight parts: 
+
+Performance_Testing_Process:
+
+1. Requirement Gathering
+The requirements are identified and gathered from the clients.
+The information on the application’s infrastructure, functionality, and usage is gathered.
+
+2. Selection of Tools
+After the analysis is complete, it performs proof of concept with the available tools.
+The available tools list depends on the tool cost and the technology used.
+
+3. Performance Test Plan
+After the above steps, test planning and designing are done.
+It is the test plan that decides how the performance test will take place.
+
+4. Performance Test Development
+Here, the use cases for the identified functionalities are created.
+Once the clients approve the use case, the script development begins.
+These scripts are then validated, and parallelly the test environment is set up.
+
+5. Performance Test Modeling
+Here the performance load model is created for test execution.
+It is checked if they achieve the performance metrics provided by the clients.
+
+6. Execution of Test
+Initially, the tests are not executed with maximum users that are in the Load model.
+It does the text execution in incremental order.
+
+7. Test Results Analysis
+Results are the most important deliverable for performance testing.
+Here, the ROI and productivity that performance testing may provide are shown.
+
+8. Report 
+At the end of all the steps, it is necessary to have a simplified conclusion
+A brief, descriptive, and to-the-point test report is made.
+
+Listeners:
+----------
+	When the JMeter runs the test cases, there will be some sort information will be obtained as a by product
+of the execution of the test cases. Those information can be accessed with the help of Listeners.
+
+JMeter has several listener options. Few of them are:
+
+*Graph result ----- It shownin the graph view Avg, Mean and to find the nature of performance
+*View results tree ----- It shows the HTTP- req category type and shown the response type
+*View results table ----- It shows in table format and also shown the latency(delay time b/w req and res), response size etc
+*Aggregate report ----- Aggregate(Combine the one or two more things and say as collective), Collective request type
+*Aggregate graph ----- It shows in a graphical view.
+*Response Time Graph --- It shows the time of res and req.
+
+HTTP Test Script Recorder:
+--------------------------
+*How to record test on JMeter
+*How to add & use Test Script Recorder
+*How to add & use Recording controller
+*How to use proxy on firefox, chrome and system
+*How to add SSL cerificate
+*How to do Request filtering
+*How to use Recording Template
+
+What?
+It is an element in JMeter that helps us to record our http request insted of manually adding our request
+in a http sampler 
+
+Why?
+We can browse the action it will automatically record the steps and save lots of time, efficient and powerful
+
+https://lifecharger.org
+
+How?
+
+TestPlan ----- Add ------- Nontest element ------ Http(s) test script recorder
+
+TestPlan ----- Add ------- Threads(user) ----- Thread group
+
+Thread group ----- Logic controllers ----- Recording Controller(To add Recorded steps)
+
